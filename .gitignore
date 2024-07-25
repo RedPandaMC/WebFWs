@@ -1,0 +1,104 @@
+# See https://help.github.com/articles/ignoring-files/ for more about ignoring files.
+
+# dependencies
+node_modules/
+
+# IDEs and editors
+/.idea/
+/.vscode/
+/*.sublime-project
+/*.sublime-workspace
+
+# Angular build and output directories
+/dist/
+/build/
+/out-tsc/
+
+# Angular cache files
+/.angular/cache/
+
+# Angular generated files
+/tmp/
+/coverage/
+/.aot/
+/ivy-ngcc/
+
+# Environment variables
+/src/environments/environment*.ts
+
+# Compiled TypeScript files
+*.js
+*.js.map
+
+# Logs
+npm-debug.log*
+yarn-debug.log*
+yarn-error.log*
+
+# Optional npm cache directory
+.npm
+
+# Optional eslint cache
+.eslintcache
+
+# Optional stylelint cache
+.stylelintcache
+
+# Mac system files
+.DS_Store
+
+# Windows system files
+Thumbs.db
+ehthumbs.db
+
+# Temporary files
+*.swp
+*.swo
+*~
+.project
+.idea
+
+# Dependency directories
+jspm_packages/
+typings/
+
+# Optional eslint cache
+.eslintcache
+
+# Optional stylelint cache
+.stylelintcache
+
+# Dependency directories
+jspm_packages/
+typings/
+
+# Optional runtime data
+pids
+*.pid
+*.seed
+*.pid.lock
+
+# Coverage directory used by tools like istanbul
+coverage
+
+# nyc test coverage
+.nyc_output
+
+# Ignore karma files
+karma.conf.js
+
+# Ignore Protractor files
+protractor.conf.js
+e2e/*.js
+e2e/*.map
+
+# Prettier configuration file
+/.prettierignore
+
+# VS Code settings
+.vscode/*
+
+# Storybook files
+storybook-static
+
+# End of list

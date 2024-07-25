@@ -1,0 +1,13 @@
+{
+  "name": "Angular 16 Development Container",
+  "dockerFile": "Dockerfile",
+  "appPort": [4200],
+  "extensions": [
+    "dbaeumer.vscode-eslint",
+    "esbenp.prettier-vscode",
+    "angular.ng-template"
+  ],
+  "settings": {
+    "terminal.integrated.shell.linux": "/bin/bash"
+  }
+}
