@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<script>
+    window.addEventListener('DOMContentLoaded', (event) => {
+        let paragraph = document.getElementsByTagName("p")[0];
+        setInterval(() => {
+            let currentdate = new Date(); 
+            paragraph.innerHTML = "De huidige tijd: " 
+                + currentdate.getHours() + ":"  
+                + currentdate.getMinutes() + ":" 
+                + currentdate.getSeconds();
+        }, 500);
+    });
+</script>
+<body>
+    <p></p>
+</body>
+</html>
