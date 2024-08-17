@@ -4,7 +4,7 @@ function gestructureerdeMededeling(jaar:number=0,klantNr:number=0,bestelNr:numbe
     numbers[1] = klantNr.toString().slice(-4).padStart(4,'0')
     numbers[2] = bestelNr.toString().slice(-3).padStart(3,'0')
 
-    let c = (parseInt(numbers.join('')) % 97).toString().padStart(2,'0')
+    let c : string = (parseInt(numbers.join('')) % 97).toString().padStart(2,'0')
 
     return dec.repeat(3) + (numbers.join(sep) + c) + dec.repeat(3)
 }
