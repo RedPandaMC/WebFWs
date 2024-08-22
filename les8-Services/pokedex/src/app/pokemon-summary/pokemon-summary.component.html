@@ -1,35 +1,48 @@
-<div *ngIf="selectedPokemon">
-  <div class="card">
-    <div class="card-content">
-      <div class="content">
-        <!-- Pokémon Header with Image and Basic Info -->
-        <div class="media">
-          <div class="media-left">
-            <figure class="image is-96x96">
-              <img [src]="selectedPokemon.sprites.animated" alt="{{selectedPokemon.name}}">
-            </figure>
-          </div>
-          <div class="media-content">
-            <p class="title is-4">{{selectedPokemon.name}}</p>
-            <p class="subtitle is-6">ID: {{selectedPokemon.id}}</p>
-          </div>
-        </div>
-
-        <!-- Pokémon Detailed Info -->
-        <div class="columns">
+<div *ngIf="selectedPokemon" class="card">
+  <div class="card-content">
+    <!-- Pokémon Header with Image and Basic Info -->
+    <div class="media">
+      <div class="media-left">
+        <figure class="image is-96x96">
+          <img [src]="selectedPokemon.sprites.animated" alt="{{selectedPokemon.name}}">
+        </figure>
+      </div>
+      <div class="media-content">
+        <div class="columns is-vcentered">
           <div class="column">
-            <p><strong>Height:</strong> {{selectedPokemon.height}}</p>
-            <p><strong>Weight:</strong> {{selectedPokemon.weight}}</p>
+            <p class="title is-4 capitalize">{{selectedPokemon.name}}</p>
+            <ng-container *ngIf="checkFavouriteById(selectedPokemon.id)">
+              <p class="subtitle is-6 has-text-warning">
+                Favourite <fa-icon [icon]="faStar"></fa-icon>
+              </p>
+            </ng-container>
           </div>
-          <div class="column">
-            <p><strong>Base Experience:</strong> {{selectedPokemon.base_experience}}</p>
-            <p><strong>Order:</strong> {{selectedPokemon.order}}</p>
-          </div>
-          <div class="column">
-            <p><strong>Is Default:</strong> {{selectedPokemon.is_default === 'true' ? 'Yes' : 'No'}}</p>
+          <div class="column is-narrow">
+            <p class="subtitle is-6"><strong>ID:</strong> {{selectedPokemon.id}}</p>
           </div>
         </div>
       </div>
     </div>
+
+    <!-- Pokémon Detailed Info -->
+    <div class="columns is-multiline is-mobile">
+      <div class="column is-half">
+        <p><strong>Height:</strong> {{selectedPokemon.height}}</p>
+      </div>
+      <div class="column is-half">
+        <p><strong>Weight:</strong> {{selectedPokemon.weight}}</p>
+      </div>
+      <div class="column is-half">
+        <p><strong>Base Experience:</strong> {{selectedPokemon.base_experience}}</p>
+      </div>
+      <div class="column is-half">
+        <p><strong>Order:</strong> {{selectedPokemon.order}}</p>
+      </div>
+      <div class="column is-full">
+        <p><strong>Is Default:</strong> {{selectedPokemon.is_default === 'true' ? 'Yes' : 'No'}}</p>
+      </div>
+    </div>
   </div>
 </div>
+
+

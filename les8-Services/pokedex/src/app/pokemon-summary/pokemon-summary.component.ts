@@ -1,7 +1,8 @@
 import { Component, OnInit } from '@angular/core';
-import pokemon from '../pokemon.json'
 import { ActivatedRoute } from '@angular/router';
+import { PokedexService } from '../services/pokedex.service';
 import Pokemon from '../types';
+import { faStar } from '@fortawesome/free-solid-svg-icons';
 
 @Component({
   selector: 'app-pokemon-summary',
@@ -9,15 +10,19 @@ import Pokemon from '../types';
   styleUrls: ['./pokemon-summary.component.css']
 })
 export class PokemonSummaryComponent implements OnInit{
-  pokemon: Pokemon[] = pokemon;
   selectedPokemon: Pokemon | undefined;
+  faStar = faStar;
 
-  constructor(private route: ActivatedRoute) { }
+  constructor(private route: ActivatedRoute,private service: PokedexService) { }
 
   ngOnInit(): void {
     this.route.paramMap.subscribe(params => {
       let id = params.get("id")!;
-      this.selectedPokemon = this.pokemon.find(p => p.id === id);
+      this.selectedPokemon = this.service.getPokemonById(id)
     })
+  }
+
+  public checkFavouriteById(id:string) {
+    return this.service.checkFavouriteById(id)
   }
 }

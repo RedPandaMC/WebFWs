@@ -1,22 +1,30 @@
-<br>
 <div class="columns is-multiline">
-  <div class="column is-1" *ngFor="let pokemon of pokemon">
-    <a [routerLink]="'/pokemon/' + pokemon.id">
-      <div class="card">
-        <div class="card-image is-flex is-justify-content-center is-align-items-flex-start py-4" style="height: 80%;">
-          <figure class="image is-64x64">
-            <img src="{{pokemon.sprites.animated}}" alt="{{pokemon.name}}">
+  <div class="column is-2" *ngFor="let pokemon of pokemon">
+    <div class="card is-relative">
+      <a [routerLink]="'/pokemon/' + pokemon.id">
+        <div class="card-image is-flex is-justify-content-center is-align-items-flex-start py-4" style="height: 80%">
+          <figure class="image is-128x128">
+            <img src="{{ pokemon.sprites.animated }}" alt="{{ pokemon.name }}" />
           </figure>
         </div>
-        <div class="card-content has-background-info-light">
-          <div class="media">
-            <div class="media-content has-text-centered">
-              <p class="is-size-7 is-family-monospace">{{pokemon.name}}</p>
-            </div>
+      </a>
+
+      <div class="card-content has-background-info-light">
+        <div class="media">
+          <div class="media-content has-text-centered">
+            <p class="is-size-6 is-family-monospace">{{ pokemon.name }}</p>
           </div>
         </div>
+        <!-- Favorite Button (Moved below text) -->
+        <div class="has-text-centered mt-3">
+          <button (click)="toggleFavouritePokemon(pokemon.id)" class="button is-info" style="border-radius: 10px">
+            <span>
+              {{ checkFavouriteById(pokemon.id) ? "Remove" : "Add" }}
+              <fa-icon [icon]="faStar"></fa-icon>
+            </span>
+          </button>
+        </div>
       </div>
-    </a>
+    </div>
   </div>
 </div>
-
