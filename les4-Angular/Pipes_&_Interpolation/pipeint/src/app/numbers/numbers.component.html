@@ -1,0 +1,21 @@
+<div class="table-container">
+  <table class="table is-fullwidth is-hoverable">
+    <thead>
+      <tr>
+        <th>Rang</th>
+        <th>Getal</th>
+      </tr>
+    </thead>
+    <tbody>
+      <ng-container *ngFor="let number of numbers; let i = index">
+        <tr *ngIf="number % 2 === 0">
+          <td>{{i + 1}}</td>
+          <td *ngIf="number >= 9; else ElseBlock"><b>{{number}}</b></td>
+          <ng-template #ElseBlock>
+            <td>{{number}}</td>
+          </ng-template>
+        </tr>
+      </ng-container>
+    </tbody>
+  </table>
+</div>

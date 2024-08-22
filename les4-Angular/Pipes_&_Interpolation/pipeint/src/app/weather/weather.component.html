@@ -1,0 +1,34 @@
+<ng-template #weatherItemTemplate let-city="city" let-temp="temp">
+  <div class="weather-item box">
+    <h3 class="location title is-3">{{ city }}</h3>
+    <p class="temperature subtitle is-1">{{ temp }}°C</p>
+
+    <figure class="image">
+      <img class="weather-image" src="https://openweathermap.org/img/w/0{{temp % 4 + 1}}d.png">
+    </figure>
+
+    <ng-template [ngIf]="17 <= temp">
+      <p class="warning has-text-info">
+        Zacht weertje!
+      </p>
+    </ng-template>
+    <ng-template [ngIf]="1 <= temp && temp <= 3">
+      <p class="warning has-text-warning">
+        Kans op sneeuw!
+      </p>
+    </ng-template>
+    <ng-template [ngIf]="temp == 0">
+      <p class="warning has-text-danger">
+        Kans op gladheid!
+      </p>
+    </ng-template>
+  </div>
+</ng-template>
+
+<div class="weather-container columns is-multiline">
+  <ng-container *ngFor="let city of cities; let i = index">
+    <div class="column">
+      <ng-container *ngTemplateOutlet="weatherItemTemplate; context: { city: city, temp: temps[i] }"></ng-container>
+    </div>
+  </ng-container>
+</div>

@@ -1,0 +1,17 @@
+<div>
+  <h3>To do lijstje:</h3>
+
+  <p *ngIf="t.tasks.length === 0; else ElseBlock">Todo lijst is leeg</p>
+
+  <ng-template #ElseBlock>
+    <ol>
+      <li *ngFor="let task of t.tasks; let i = index">
+        {{task}}
+        <input type="button" value="X" (click)="t.deleteTask(i)">
+      </li>
+    </ol>
+  </ng-template>
+
+  <input #addTaskInput type="text">
+  <input type="button" value="Taak Toevoegen" (click)="t.addTask(addTaskInput.value)">
+</div>

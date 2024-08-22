@@ -1,0 +1,6 @@
+.image_element {
+  max-width: 100%;
+  height: auto;
+  opacity: 50%;
+  filter: brightness(50%);
+}

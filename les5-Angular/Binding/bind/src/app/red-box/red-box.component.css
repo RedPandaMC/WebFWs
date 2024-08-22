@@ -1,0 +1,9 @@
+.red-box {
+  height: 200px;
+  width: 200px;
+  background-color: teal;
+  color: whitesmoke;
+  display: flex;                /* Make .red-box a flex container */
+  text-align: start;           /* Center text horizontally */
+  align-items: start;          /* Center text vertically */
+}

@@ -1,0 +1,22 @@
+<div>
+  <label for="min">Min: </label>
+  <input id="min" type="number" [(ngModel)]="minValue" />
+
+  <label for="max">Max: </label>
+  <input id="max" type="number" [(ngModel)]="maxValue" />
+
+  <label for="toggle">Enable: </label>
+  <input id="toggle" type="checkbox" [(ngModel)]="enable" />
+
+  <button (click)="toggle()">Stop/Start</button>
+
+  <app-random
+    [min]="minValue"
+    [max]="maxValue"
+    [enable]="enable"
+    [interval]="2000"
+    (randomValue)="handleRandomValue($event)">
+  </app-random>
+
+  <p>Generated Value: {{ latestValue }}</p>
+</div>

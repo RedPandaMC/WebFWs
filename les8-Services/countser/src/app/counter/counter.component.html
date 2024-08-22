@@ -1,0 +1,17 @@
+<div class="container">
+  <div class="columns is-centered">
+    <div class="column is-half">
+      <div class="field">
+        <label class="label">Input Field</label>
+        <div class="control">
+          <input [(ngModel)]="count" class="input" type="number" (ngModelChange)="setCount($event)" />
+        </div>
+      </div>
+      <div class="field">
+        <div class="control">
+          <button class="button is-primary" (click)="incrementCount()">{{ count }}</button>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>

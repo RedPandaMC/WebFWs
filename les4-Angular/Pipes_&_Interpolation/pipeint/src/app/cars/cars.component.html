@@ -1,0 +1,25 @@
+<div class="columns is-multiline">
+  <div class="column is-one-fifth" *ngFor="let carBrand of carBrands; let i = index">
+    <ng-container
+      *ngTemplateOutlet="carItemTemplate; context: { name: carBrand.name, models: carBrand.models }">
+    </ng-container>
+  </div>
+</div>
+
+<ng-template #carItemTemplate let-name="name" let-models="models">
+  <div class="content">
+    <ul>
+      <!-- Car name -->
+      <li>
+        {{ name }}
+        <!-- Models, only if the array is not empty -->
+        <ul *ngIf="models.length > 0">
+          <li *ngFor="let model of models">
+            {{ model }}
+          </li>
+        </ul>
+      </li>
+    </ul>
+  </div>
+</ng-template>
+

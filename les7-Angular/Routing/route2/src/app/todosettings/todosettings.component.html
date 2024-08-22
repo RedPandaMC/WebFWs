@@ -1,0 +1,9 @@
+<div>
+  <label for="max-tasks">Maximum taken: </label>
+  <input id="max-tasks" type="number" [(ngModel)]="maxTasksSettings" />
+
+  <label for="title">Title: </label>
+  <input id="title" type="string" [(ngModel)]="titleSettings" />
+</div>
+
+<app-todo [max_tasks]="maxTasksSettings" [title]="titleSettings"></app-todo>

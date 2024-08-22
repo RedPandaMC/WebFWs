@@ -1,0 +1,18 @@
+<div class="container p-4">
+  <!-- Display the time -->
+  <div class="box has-text-centered is-size-4">{{time}}</div>
+
+  <!-- Morning Greeting -->
+  <ng-template [ngIf]="hour < 12">
+      <div class="notification is-primary">
+          <h2 class="title">Goede morgen!</h2>
+      </div>
+  </ng-template>
+
+  <!-- Evening Greeting -->
+  <ng-template [ngIf]="hour >= 18">
+      <div class="notification is-dark">
+          <h2 class="title">Goede avond!</h2>
+      </div>
+  </ng-template>
+</div>

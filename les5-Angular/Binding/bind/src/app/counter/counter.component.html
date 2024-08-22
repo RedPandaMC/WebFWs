@@ -1,0 +1,35 @@
+<div class="container">
+  <div class="columns is-centered">
+    <div class="column is-half">
+      <div class="field">
+        <label class="label">Input Field</label>
+        <div class="control">
+          <input [(ngModel)]="c.count" class="input" type="number" (ngModelChange)="c.setCount($event)"/>
+        </div>
+      </div>
+      <div class="field">
+        <div class="control">
+          <button class="button is-primary" (click)="c.incrementCount()">{{ c.count }}</button>
+          <select [(ngModel)]="c.selectedValue">
+            <option [ngValue]="0">A</option>
+            <option [ngValue]="1">B</option>
+            <option [ngValue]="2">C</option>
+            <option [ngValue]="3">D</option>
+          </select>
+          <select [(ngModel)]="c.selectedValue">
+            <option [ngValue]="0">A</option>
+            <option [ngValue]="1">B</option>
+            <option [ngValue]="2">C</option>
+            <option [ngValue]="3">D</option>
+          </select>
+          <select [(ngModel)]="c.selectedValue">
+            <option [ngValue]="0">A</option>
+            <option [ngValue]="1">B</option>
+            <option [ngValue]="2">C</option>
+            <option [ngValue]="3">D</option>
+          </select>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>

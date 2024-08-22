@@ -1,0 +1,13 @@
+<div class="card">
+  <div class="card-image is-size-2 has-text-black has-text-centered has-text-weight-semibold is-family-monospace">
+    <figure class="image image_element" style="overflow: hidden; position: relative">
+      <img [src]="image.imageUrl" class="is-radiusless" />
+    </figure>
+    <select [(ngModel)]="image.imageUrl">
+      <ng-container *ngFor="let imageUrl of image.imageUrls">
+        <option [value]="imageUrl">Image {{ image.imageUrls.indexOf(imageUrl) + 1 }}</option>
+      </ng-container>
+    </select>
+    Welcome to Angular binding hell! Enjoy your stay :)!
+  </div>
+</div>

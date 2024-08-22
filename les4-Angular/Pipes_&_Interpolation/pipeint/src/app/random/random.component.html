@@ -1,0 +1,19 @@
+<div class="container p-4">
+  <ng-template [ngIf]="delay">
+      <div class="notification is-info is-size-4">
+          <h2 class="title">Het resultaat van de test is: {{ random }} / 10</h2>
+      </div>
+  </ng-template>
+
+  <ng-template [ngIf]="delay && score <= 4">
+      <div class="notification is-danger is-size-6">
+          <h2 class="title">Dit resultaat is ondermaats.</h2>
+      </div>
+  </ng-template>
+
+  <ng-template [ngIf]="delay && score > 7">
+      <div class="notification is-success is-size-6">
+          <h2 class="title">Dit resultaat is goed.</h2>
+      </div>
+  </ng-template>
+</div>

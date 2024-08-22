@@ -1,0 +1,33 @@
+<div>
+  <video #videoPlayer width="{{ movie.resolution[0] }}" height="{{ movie.resolution[1] }}" controls (play)="handlePlay()"
+    (pause)="handlePause()">
+    <source src="http://commondatastorage.googleapis.com/gtv-videos-bucket/sample/BigBuckBunny.mp4" type="video/mp4" />
+    Your browser does not support the video tag.
+  </video>
+
+  <div class="box has-background-light">
+    <div class="field">
+      <div class="control">
+        <select (change)="updateResolution($event)" class="select is-small">
+          <option *ngFor="let resolution of movie.resolutionOptions" [value]="resolution">
+            {{ resolution[0] }}x{{ resolution[1] }}
+          </option>
+        </select>
+      </div>
+    </div>
+
+    <div class="field is-grouped">
+      <p class="control">
+        <button type="submit" class="button is-primary is-small" (click)="playVideo(videoPlayer)" [disabled]="movie.isplaying">
+          Play
+        </button>
+      </p>
+      <p class="control">
+        <button type="submit" class="button is-danger is-small" (click)="pauseVideo(videoPlayer)" [disabled]="!movie.isplaying">
+          Pause
+        </button>
+      </p>
+    </div>
+  </div>
+</div>
+

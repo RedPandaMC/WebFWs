@@ -1,0 +1,5 @@
+<select [(ngModel)]="imageUrl">
+  <ng-container *ngFor="let Url of imageUrls">
+    <option [value]="Url">Image {{ imageUrls.indexOf(Url) + 1 }}</option>
+  </ng-container>
+</select>

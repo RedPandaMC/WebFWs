@@ -1,0 +1,29 @@
+.weather-container {
+  display: flex;
+  gap: 10px; /* Space between items */
+}
+
+.weather-item {
+  display: flex;
+  flex-direction: column;
+  align-items: center; /* Center align items horizontally */
+}
+
+.weather-image {
+  width: 50px;
+  height: 50px;
+  margin-top: 10px; /* Optional: Add some space between the text and image */
+}
+
+.location {
+  font-size: 1rem; /* Adjust font size to fit Bulma styles */
+}
+
+.temperature {
+  font-size: 1.5rem; /* Adjust font size to fit Bulma styles */
+}
+
+.warning {
+  font-size: 0.75rem; /* Adjust font size to fit Bulma styles */
+  margin-top: 10px; /* Space between the temperature and warning message */
+}
